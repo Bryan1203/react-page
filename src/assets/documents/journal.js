@@ -1,3 +1,6 @@
+import Demo1 from "../_figures/demo1.png"
+import Demo2 from "../_figures/demo2.png"
+import Demo3 from "../_figures/demo3.png"
 const Journal = {
     "30": {
         title: `Today Will Be a Good Day`,
@@ -16,7 +19,7 @@ const Journal = {
         'Today will be a good day.' His words seemed simple, yet they carried an inexplicable magic. Suddenly, it all 
         came flooding back to me—the reason I embarked on this journey, the desire to explore, to challenge myself, 
         to experience the world.`,
-        image: [`../_figures/montana.jpg`]
+        image: [Demo1, Demo2, Demo3]
     },
     "42": {
         title: `The Carnival`,
@@ -35,73 +38,73 @@ const Journal = {
         laugh even harder. The laughter became infectious, spreading through the carnival like wildfire. The entire place was 
         filled with the sound of merriment and happiness. It was a moment of unbridled joy, and in that carnival, on that 
         exhilarating day, I experienced one of the happiest moments of my life.`,
-        image: [`../_figures/penn.jpg`],
+        image: [Demo1, Demo2, Demo3],
         video: `https://drive.google.com/file/d/1PmoIYyFMmXZslzmDfX38NWtmAPE7wFAL/preview`
     },
     "36": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "34": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "39": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "18": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "17": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "55": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "27": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "46": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "56": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "16": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "53": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "41": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     },
     "06": {
         title: "",
         body: "",
-        image: [""]
+        image: [Demo1, Demo2, Demo3]
     }
 }
 

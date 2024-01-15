@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Badge, Card, CardBody, Carousel, CarouselItem, Col, Collapse, Container, ListGroup, Pagination, Row } from 'react-bootstrap';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
-import JournalDemo from '../assets/documents/journalDemo';
+import JournalDemo from '../assets/documents/journal';
 import Bike from '../assets/_figures/bike.svg'
 
 const MapDemo = () => {
@@ -37,12 +37,41 @@ const MapDemo = () => {
         }
     }
 
+    function slicer(str, i, j) {
+        const words = str.split(" ");
+        const slicedWords = words.slice(i, j);
+        return slicedWords.join(" ");
+    }
+    function handlePrev() {
+        setPage(curr => curr - 1)
+    }
+    function handleNext() {
+        setPage(curr => curr + 1)
+    }
+    const [page, setPage] = useState(1);
     function formatJournalEntry(entry) {
+        const wordsPerPage = 180
+        
+        const first = (page - 1) * wordsPerPage;
+        const last = page * wordsPerPage;
+
+        const text = slicer(entry.body, first, last)
         return (
             <div>
                 <CardBody>
                     <h2 className='journalTitle' style={{textAlign: 'center'}}>"{entry.title}"</h2>
-                    <p className='journalBody'>{entry.body}</p>
+                    <Card style={{height:'400px'}}>
+                        <div style={{height:'350px', overflow:'hidden', marginBottom:'10px'}}>
+                        <p className='journalBody' style={{margin:'20px'}}>{text}</p>
+                        </div>
+                        <div style={{alignSelf:'end', marginRight:'20px'}}>
+                            <Pagination>
+                                <Pagination.Prev onClick={handlePrev} disabled={page===1}/>
+                                <Pagination.Item>{page}</Pagination.Item>
+                                <Pagination.Next onClick={handleNext} disabled={text.length < wordsPerPage}/>
+                            </Pagination>
+                        </div>
+                    </Card>
                 </CardBody>
                 <CardBody>
                 <Carousel>
