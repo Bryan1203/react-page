@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Badge, Card, CardBody, Carousel, CarouselItem, Col, Collapse, Container, ListGroup, Pagination, Row } from 'react-bootstrap';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
-import JournalDemo from '../assets/documents/journal';
+import Journal from '../assets/documents/journal';
 import Bike from '../assets/_figures/bike.svg'
 
 const MapDemo = () => {
@@ -23,76 +23,90 @@ const MapDemo = () => {
         "56":[200, 140, '6/31/2022-7/09/2022'], "30":[180, 90, '7/10/2022-7/15/2022'], "16":[110, 120, '7/16/2022-7/18/2022'], 
         "53":[50, 80, '7/19/2022-7/24/2022'], "41":[40, 150, '7/25/2022-7/29/2022'], "06":[20, 260, '7/30/2022-8/06/2022']}
     const [selectedState, setSelectedState] = useState(null)
-    const [bikePosition, setBikePosition] = useState({ x: 690, y: -10 })
+    const [bikePosition, setBikePosition] = useState({ x: 690, y: 50 })
     const [open, setOpen] = useState(false);
     const handleStateClick = (id) => {
         if (selectedState === id) {
             setOpen(false)
             setSelectedState(null)
-            setBikePosition({ x: 690, y: -10 })
+            setBikePosition({ x: 690, y: 50 })
         } else {
             setSelectedState(id)
             setBikePosition({ x: visitedStates[id][0], y: visitedStates[id][1] })
             setOpen(true)
         }
+        setPage(1)
     }
 
-    function slicer(str, i, j) {
-        const words = str.split(" ");
-        const slicedWords = words.slice(i, j);
-        return slicedWords.join(" ");
-    }
-    function handlePrev() {
-        setPage(curr => curr - 1)
-    }
-    function handleNext() {
-        setPage(curr => curr + 1)
-    }
-    const [page, setPage] = useState(1);
+    const charsPerPage = 1250;
+    function slicer(str, i, charsPerPage) {
+        var pages = [];
+        let p = 0;
+        while (i < str.length) {
+            let j = i + charsPerPage;
+            if (j < str.length) {
+                while (j > i && str[j] !== ' ') {
+                    j--;
+                }
+                if (j === i) {
+                    j = i + charsPerPage;
+                }
+            }
+            pages[p++] = str.slice(i, j).trim();
+            i = j;
+        }
+        return pages;
+    }    
+
+    const handlePrev = () => {
+        setPage(curr => curr - 1);
+    };
+
+    const handleNext = () => {
+        setPage(curr => curr + 1);
+    };
+
+    const [page, setPage] = useState(1)
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    const handleImageClick = (imgsrc) => {
+        setSelectedImage(imgsrc);
+    };
+
     function formatJournalEntry(entry) {
-        const wordsPerPage = 180
-        
-        const first = (page - 1) * wordsPerPage;
-        const last = page * wordsPerPage;
-
-        const text = slicer(entry.body, first, last)
+        const pages = slicer(entry.body, 0, charsPerPage);
         return (
             <div>
                 <CardBody>
                     <h2 className='journalTitle' style={{textAlign: 'center'}}>"{entry.title}"</h2>
-                    <Card style={{height:'400px'}}>
-                        <div style={{height:'350px', overflow:'hidden', marginBottom:'10px'}}>
-                        <p className='journalBody' style={{margin:'20px'}}>{text}</p>
+                    <Card style={{height:'561px'}}>
+                        <div style={{height:'500px', overflow:'hidden', marginBottom:'10px'}}>
+                        <p className='journalBody' style={{ margin: '20px', textAlign: 'left' }}>
+                            {pages[page - 1]}
+                            {pages[page] !== undefined && <span>...</span>}
+                        </p>
                         </div>
-                        <div style={{alignSelf:'end', marginRight:'20px'}}>
-                            <Pagination>
-                                <Pagination.Prev onClick={handlePrev} disabled={page===1}/>
-                                <Pagination.Item>{page}</Pagination.Item>
-                                <Pagination.Next onClick={handleNext} disabled={text.length < wordsPerPage}/>
+                        <div style={{alignSelf:'center'}}>
+                            <Pagination className='taviraj-medium'>
+                                <Pagination.Prev onClick={handlePrev} disabled={page===1}  linkStyle={{color:'black'}}/>
+                                <Pagination.Item linkStyle={{color:'black'}}>{page}</Pagination.Item>
+                                <Pagination.Next onClick={handleNext} disabled={pages[page] === undefined} linkStyle={{color:'black'}}/>
                             </Pagination>
                         </div>
                     </Card>
                 </CardBody>
-                <CardBody>
-                <Carousel>
-                {entry.image.map((imgsrc, index) => (
-                    <Carousel.Item key={index}>
-                    <img
-                    className="d-block w-100"
-                    src={imgsrc}
-                    alt={`image of demo${index+1}`}
-                    />
-                    </Carousel.Item>
-                ))}
-                </Carousel>
-                </CardBody>
+                {selectedImage && (
+                    <div className="image-modal" onClick={() => setSelectedImage(null)}>
+                        <img src={selectedImage} alt="Enlarged view" />
+                    </div>
+                )}
             </div>
         )
     }    
     
     return (    
         <Container>
-        <h1>Illini4000 2022 interactive ride map (work in progress)</h1>
+        {/* <h1>Illini4000 2022 interactive ride map (work in progress)</h1>
         <p>This is a <strong>demo</strong> of an interactive map website I'm building for my friend to document his 
             <a href='https://www.illini4000.org/2022-route' target="_blank" rel="noopener noreferrer"> cycling journey </a>   
             across the US in the summer of 2022.
@@ -103,18 +117,18 @@ const MapDemo = () => {
             <a href='https://github.com/topojson/us-atlas#states' target="_blank" rel="noopener noreferrer"> U.S Atlas TopoJSON </a> 
             that leaves only the continental United States.
             Each state that was visited is a clickable button that allows users to view content specific to that state.
-        </p>
+        </p> */}
         <Row style={{backgroundColor:'#89CFF3', paddingBottom:'15px', paddingTop:'15px'}}>
             <Col xs={12} md={6}>
             <Row style={{marginBottom:'15px'}}>
-                <Card style={{ border:'none', backgroundColor: '#89CFF3',}} className='text-center journalTitle'>
-                <h1 style={{marginTop:'10px'}}>
+                <Card className='text-center' style={{ border:'none', backgroundColor: '#89CFF3'}}>
+                <h1 className='stateTitle' style={{marginTop:'10px', fontSize:35}}>
                     {selectedState ? map.objects.states.geometries.find(
                         geo => geo.id === selectedState).properties.name : 'click any visited state'}
                 </h1>
-                <h2>
+                {/* <h2 className='stateTitle'>
                     {selectedState? visitedStates[selectedState][2] : `and read the journal entry!`}
-                </h2>
+                </h2> */}
                 </Card>
             </Row>
             <hr/>
@@ -126,7 +140,7 @@ const MapDemo = () => {
                     scale: 750,
                     center: [-96, 39],
                 }}
-                style={{backgroundColor:'#89CFF3'}}
+                style={{backgroundColor:'#89CFF3', marginTop:'-50px', marginBottom:'-50px'}}
                 fill='white'
                 stroke='black'
                 strokeWidth={1}
@@ -159,13 +173,32 @@ const MapDemo = () => {
                         width="100"
                     />
                 </ComposableMap>
+                {selectedState &&
+                    <CardBody>
+                    <div className="images-container">
+                        {Journal[selectedState].image.map((imgsrc, index) => (
+                            <div key={index} className="image-item">
+                                <Card className='imageCard'>
+                                <img
+                                    className="d-block"
+                                    src={imgsrc}
+                                    alt={`image of demo${index+1}`}
+                                    style={{ height: '150px', width: 'auto', objectFit: 'contain', borderRadius:'4px'}}
+                                    onClick={() => handleImageClick(imgsrc)}
+                                />
+                                </Card>
+                            </div>
+                        ))}
+                    </div>
+                    </CardBody>
+                }
                 </Card>
             </Row>
             </Col>
             <Col xs={12} md={6}>
             <Collapse in={open}>
                 <Card style={{height: '100%', backgroundColor: '#CDF5FD', border:'none'}}>
-                    {selectedState && formatJournalEntry(JournalDemo[selectedState])}
+                    {selectedState && formatJournalEntry(Journal[selectedState])}
                 </Card>
             </Collapse>
             </Col>

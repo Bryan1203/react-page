@@ -19,7 +19,7 @@ const Homepage = () => {
                     <a href={Resume} target="_blank">
                     <Button variant="success" style={{marginBottom:'20px', marginLeft: '12px'}}>Download Resume</Button>
                     </a>
-                    <a href="mailto:mrchang2@wisc.edu" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:bryanchang1234@gmail.com" target="_blank" rel="noopener noreferrer">
                     <Button variant="success" style={{marginBottom:'20px', marginLeft:'20px'}}>Email me</Button>
                     </a>
                 </Container>
@@ -31,9 +31,7 @@ const Homepage = () => {
                 <Route path="/" element={<Home />} />
             </Routes>
         </BrowserRouter>
-        
         </Row>
-        <p style={{textAlign: "center"}}>Email: mrchang2@wisc.edu <br/> Mobile: 608-977-2329</p>
     </Container>
 }
 

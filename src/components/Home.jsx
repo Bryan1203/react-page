@@ -17,13 +17,13 @@ const Home = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return <Container>
+    return <Container className="background">
         <Container>
             <Row>
                 <Col xs={12} md={7}>
                 <div style={{marginLeft:'60px'}}>
                 <h1 className='taviraj-bold' style={{marginTop:'70px', fontSize:'60px'}}>Bryan Chang</h1>
-                    <p className='taviraj-regular'>
+                    <p className='taviraj-medium'>
                     I'm Bryan, a junior in Computer Engineering at the University of Illinois, 
                     Urbana Champaign. I'm passionate about the Internet of Things, specializing in C++ and Python 
                     for image recognition. Beyond tech, I find joy in cycling, weight lifting, practicing Brazilian 
@@ -32,9 +32,9 @@ const Home = () => {
                     </p>
                     <div>
                         <Link to="/projects">
-                            <Button variant="outline-dark" style={{marginRight:'20px'}}>Illini 4000 Bike Trip Across the US</Button>
+                            <Button className='taviraj-bold' variant="outline-dark" style={{marginRight:'20px'}}>Illini 4000 Bike Trip Across the US</Button>
                         </Link>
-                        <Button variant="outline-dark" >View My Projects</Button>
+                        <Button className='taviraj-bold' variant="outline-dark" >View My Projects</Button>
                     </div>
 
                 </div>                    
@@ -46,19 +46,14 @@ const Home = () => {
                         src={headshot} 
                         alt="headshot" 
                         rounded 
-                        style={{ height: '700px', filter: 'drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5))' }}
+                        style={{height: '700px', marginTop: '40px', filter: 'drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5))' }}
                         />
                     )}
-                    <div style={{ alignSelf: 'stretch', textAlign: 'center', marginTop: '10px'}}>
-                        <a href="https://www.linkedin.com/in/matthew-chang-899861233/" target="_blank" rel="noopener noreferrer">
-                        linkedin.com/in/matthew-chang-899861233/
-                        </a>
-                    </div>
                 </Col>
             </Row>
         </Container>
     
-        <hr style={{marginTop:'15px'}}/>
+        
     </Container>
 }
 export default Home
