@@ -5,7 +5,7 @@ import Journal from '../assets/documents/journal';
 import Bike from '../assets/_figures/bike.svg'
 
 const MapDemo = () => {
-    const [map, setMap] = useState([])
+    const [map, setMap] = useState(null)
     useEffect(() => {
         fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json", {
         })
@@ -22,12 +22,12 @@ const MapDemo = () => {
         "55":[440, 140, '6/14/2022-6/17/2022'], "27":[390, 120, '6/18/2022-6/21/2022'], "46":[300, 110, '6/22/2022-6/29/2022'], 
         "56":[200, 140, '6/31/2022-7/09/2022'], "30":[180, 90, '7/10/2022-7/15/2022'], "16":[110, 120, '7/16/2022-7/18/2022'], 
         "53":[50, 80, '7/19/2022-7/24/2022'], "41":[40, 150, '7/25/2022-7/29/2022'], "06":[20, 260, '7/30/2022-8/06/2022']}
-    const [selectedState, setSelectedState] = useState(null)
+    const [selectedState, setSelectedState] = useState("36")
     const [bikePosition, setBikePosition] = useState({ x: 690, y: 50 })
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const handleStateClick = (id) => {
         if (selectedState === id) {
-            setOpen(false)
+            setOpen(true)
             setSelectedState(null)
             setBikePosition({ x: 690, y: 50 })
         } else {
@@ -79,7 +79,7 @@ const MapDemo = () => {
             <div>
                 <CardBody>
                     <h2 className='journalTitle' style={{textAlign: 'center'}}>"{entry.title}"</h2>
-                    <Card style={{height:'561px'}}>
+                    <Card style={{height:'571px'}}>
                         <div style={{height:'500px', overflow:'hidden', marginBottom:'10px'}}>
                         <p className='journalBody' style={{ margin: '20px', textAlign: 'left' }}>
                             {pages[page - 1]}
@@ -104,21 +104,10 @@ const MapDemo = () => {
         )
     }    
     
-    return (    
+    return (
         <Container>
-        {/* <h1>Illini4000 2022 interactive ride map (work in progress)</h1>
-        <p>This is a <strong>demo</strong> of an interactive map website I'm building for my friend to document his 
-            <a href='https://www.illini4000.org/2022-route' target="_blank" rel="noopener noreferrer"> cycling journey </a>   
-            across the US in the summer of 2022.
-            <br/>
-            The map is built with 
-            <a href='https://www.react-simple-maps.io/' target="_blank" rel="noopener noreferrer"> React Simple Maps </a>
-            using a modified 
-            <a href='https://github.com/topojson/us-atlas#states' target="_blank" rel="noopener noreferrer"> U.S Atlas TopoJSON </a> 
-            that leaves only the continental United States.
-            Each state that was visited is a clickable button that allows users to view content specific to that state.
-        </p> */}
-        <Row style={{backgroundColor:'#89CFF3', paddingBottom:'15px', paddingTop:'15px'}}>
+        {map&&(
+        <Row style={{backgroundColor:'#89CFF3', paddingBottom:'15px', paddingTop:'15px', borderRadius:'10px'}}>
             <Col xs={12} md={6}>
             <Row style={{marginBottom:'15px'}}>
                 <Card className='text-center' style={{ border:'none', backgroundColor: '#89CFF3'}}>
@@ -203,6 +192,7 @@ const MapDemo = () => {
             </Collapse>
             </Col>
         </Row>
+        )}
         </Container>
     )
 }
