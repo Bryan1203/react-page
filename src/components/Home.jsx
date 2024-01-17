@@ -32,7 +32,7 @@ const Home = () => {
             <Row>
                 <Col xs={12} md={7}>
                 <div className='Home-text'>
-                <h1 className='taviraj-bold' style={{marginTop:'70px'}}>Bryan Chang</h1>
+                <h1 className='taviraj-bold'>Bryan Chang</h1>
                     <p className='taviraj-medium'>
                     I'm Bryan, a junior in Computer Engineering at the University of Illinois, 
                     Urbana Champaign. I'm passionate about the Internet of Things, specializing in C++ and Python 

@@ -9,15 +9,17 @@
   margin-top: 100px;
 }
 .Home-text h1{
-  font-size: 360%
+  font-size: 360%;
+  margin-top: -20px;
 }
 
 @media (max-width: 768px) {
   .Home-text {
-      margin: 50px
+      margin: 50px;
   }
   .Home-text h1{
     font-size: 250%;
+    margin-top: 90px;
 }
 }
 
