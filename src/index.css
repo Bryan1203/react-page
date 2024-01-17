@@ -8,10 +8,17 @@
   margin-left: 160px;
   margin-top: 100px;
 }
+.Home-text h1{
+  font-size: 360%
+}
+
 @media (max-width: 768px) {
   .Home-text {
       margin: 50px
   }
+  .Home-text h1{
+    font-size: 250%;
+}
 }
 
 p {
