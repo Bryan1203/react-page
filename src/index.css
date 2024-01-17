@@ -1,8 +1,22 @@
+@media (max-width: 768px) {
+  .Nav-text .btn {
+      font-size: small;
+  }
+}
+
+.Home-text {
+  margin-left: 160px;
+  margin-top: 100px;
+}
+@media (max-width: 768px) {
+  .Home-text {
+      margin: 50px
+  }
+}
 
 p {
   line-height: 2.5; 
 }
-
 
 body {
   position: relative;
@@ -20,10 +34,36 @@ body {
   left: 0;
   background-image: url('assets/_figures/meadow.png');
   background-size: 110%;
-  background-position: bottom;
+  background-position: center bottom 41%;
   background-repeat: no-repeat; 
   background-attachment: scroll;
   z-index: -1;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .background {
+    content: '';
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 10;
+    left: 0;
+    background-image: url('assets/_figures/meadow.png');
+    background-size: 110%;
+    background-position: bottom;
+    background-repeat: no-repeat; 
+    background-attachment: scroll;
+    z-index: -1;
+    overflow: hidden;  }
+}
+
+/*Home projects component*/
+.centered-container {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 image {
@@ -41,11 +81,6 @@ image {
   font-family: 'DM Serif Display', serif;
   font-size: large;
   font-weight: 500;
-}
-@media (max-width: 00px) {
-  .responsive-headshot {
-    display: none;
-  }
 }
 
 /*journal images*/

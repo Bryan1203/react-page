@@ -1,7 +1,8 @@
-import { Col, Container, Button, Row, Image } from "react-bootstrap"
-import React, { useState, useEffect } from 'react';
+import { Col, Container, Button, Row, Image, Card } from "react-bootstrap"
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import headshot from "../assets/_figures/bryan.png"
+
 
 const Home = () => {
     const [showImage, setShowImage] = useState(window.innerWidth > 770);
@@ -17,11 +18,20 @@ const Home = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return <Container className="background">
-        <Container>
+
+
+    const scrollToSecondComponent = () => {
+        secondComponentRef.current.scrollIntoView({behavior:'smooth'})
+    };
+    const secondComponentRef = useRef(null);
+
+    
+
+    return <div>
+        <div className="background">
             <Row>
                 <Col xs={12} md={7}>
-                <div style={{marginLeft:'60px'}}>
+                <div className='Home-text'>
                 <h1 className='taviraj-bold' style={{marginTop:'70px', fontSize:'60px'}}>Bryan Chang</h1>
                     <p className='taviraj-medium'>
                     I'm Bryan, a junior in Computer Engineering at the University of Illinois, 
@@ -31,10 +41,10 @@ const Home = () => {
                     pursuits—I've cycled across the US and experienced the exhilaration of skydiving.
                     </p>
                     <div>
-                        <Link to="/projects">
-                            <Button className='taviraj-bold' variant="outline-dark" style={{marginRight:'20px'}}>Illini 4000 Bike Trip Across the US</Button>
+                        <Link to="/life">
+                            <Button className='taviraj-bold' variant="outline-dark" style={{marginRight:'20px', marginTop:'10px'}}>Illini 4000 Bike Trip Across the US</Button>
                         </Link>
-                        <Button className='taviraj-bold' variant="outline-dark" >View My Projects</Button>
+                        <Button className='taviraj-bold' variant="outline-dark" style={{marginTop:'10px'}}onClick={scrollToSecondComponent}>View My Projects</Button>
                     </div>
 
                 </div>                    
@@ -46,14 +56,23 @@ const Home = () => {
                         src={headshot} 
                         alt="headshot" 
                         rounded 
-                        style={{height: '700px', marginTop: '40px', filter: 'drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5))' }}
+                        style={{height: '700px', marginTop: '60px', filter: 'drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5))' }}
                         />
                     )}
                 </Col>
             </Row>
-        </Container>
-    
-        
-    </Container>
+            <div className='centered-container' ref={secondComponentRef}>
+            <h1 className="taviraj-bold">Projects</h1>
+            <p className="taviraj-medium">To see the effect of sticky positioning, select the position: sticky option and scroll 
+                this container. The element will scroll along with its container, until it is at the top of 
+                the container (or reaches the offset specified in top), and will then stop scrolling, so it stays 
+                visible. The rest of this text is only supplied to make sure the container overflows, so as to enable 
+                you to scroll it and see the effect. Far out in the uncharted backwaters of the unfashionable end of 
+                the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of 
+                roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended 
+                life forms are so amazingly primitive that they still think digital watches are a pretty neat idea.</p>
+            </div>
+        </div>
+    </div>
 }
 export default Home

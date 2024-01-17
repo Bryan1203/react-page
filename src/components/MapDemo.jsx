@@ -23,17 +23,14 @@ const MapDemo = () => {
         "56":[200, 140, '6/31/2022-7/09/2022'], "30":[180, 90, '7/10/2022-7/15/2022'], "16":[110, 120, '7/16/2022-7/18/2022'], 
         "53":[50, 80, '7/19/2022-7/24/2022'], "41":[40, 150, '7/25/2022-7/29/2022'], "06":[20, 260, '7/30/2022-8/06/2022']}
     const [selectedState, setSelectedState] = useState("36")
-    const [bikePosition, setBikePosition] = useState({ x: 690, y: 50 })
-    const [open, setOpen] = useState(true);
+    const [bikePosition, setBikePosition] = useState({ x: 650, y: 150 })
     const handleStateClick = (id) => {
         if (selectedState === id) {
-            setOpen(true)
-            setSelectedState(null)
-            setBikePosition({ x: 690, y: 50 })
+            setSelectedState("36")
+            setBikePosition({ x: 650, y: 150 })
         } else {
             setSelectedState(id)
             setBikePosition({ x: visitedStates[id][0], y: visitedStates[id][1] })
-            setOpen(true)
         }
         setPage(1)
     }
@@ -115,9 +112,9 @@ const MapDemo = () => {
                     {selectedState ? map.objects.states.geometries.find(
                         geo => geo.id === selectedState).properties.name : 'click any visited state'}
                 </h1>
-                {/* <h2 className='stateTitle'>
+                <h2 className='stateTitle'>
                     {selectedState? visitedStates[selectedState][2] : `and read the journal entry!`}
-                </h2> */}
+                </h2>
                 </Card>
             </Row>
             <hr/>
@@ -185,11 +182,9 @@ const MapDemo = () => {
             </Row>
             </Col>
             <Col xs={12} md={6}>
-            <Collapse in={open}>
                 <Card style={{height: '100%', backgroundColor: '#CDF5FD', border:'none'}}>
                     {selectedState && formatJournalEntry(Journal[selectedState])}
                 </Card>
-            </Collapse>
             </Col>
         </Row>
         )}
