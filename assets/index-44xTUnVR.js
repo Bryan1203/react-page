@@ -75,7 +75,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         The sky stretched out brilliantly, a canvas of endless blue, and the landscape before us was a 
         breathtaking display of nature's splendor. The world seemed to have awakened to greet us with its beauty.
         Despite the picturesque surroundings, I couldn't shake the feeling of restlessness that had crept in. 
-        It was the 30th day of our trip, and my body had grown accustomed to the rigors of the ride, but my 
+        It was the 51th day of our trip, and my body had grown accustomed to the rigors of the ride, but my 
         spirit was at an all-time low. The once thrilling adventure had now become routine, and nothing about it 
         sparked my interest anymore. I found myself daydreaming about ways to cut the journey short and get to 
         the stayover ASAP. However, everything changed in a matter of minutes. I was engaged in casual conversation 
