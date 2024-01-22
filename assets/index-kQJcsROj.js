@@ -101,7 +101,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
         In the following you could view my story sequentially from New York to California, some states that are labeled with light red are some of my favorite stories. 
         
-        *Note: The stories in states Minnesota and Wyoming actually took place in South Dakota due to technical issues and numerous events in that SD.
+        *Note: The stories in states Minnesota and Wyoming actually took place in South Dakota due to technical issues and numerous events happened in SD.
         `,image:[vR,yR,wR,xR]},34:{title:"",body:"",image:[Hn,Vn,bn]},39:{title:"",body:"",image:[Hn,Vn,bn]},18:{title:"Why we ride",body:`On the 14th day of our Illini4000 journey, we maintained our tradition of discussing "why we ride." Although we 
         had already explored this topic on day 0, the purpose of revisiting it was to acknowledge the stronger bond we'd forged after 
         two weeks of riding and living together. We found ourselves gathered in the cozy living room of our stayover in Lafayette, Indiana.
