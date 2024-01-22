@@ -74,7 +74,7 @@ const Journal = {
 
         In the following you could view my story sequentially from New York to California, some states that are labeled with light red are some of my favorite stories. 
         
-        *Note: The stories in states Minnesota and Wyoming actually took place in South Dakota due to technical issues and numerous events in that SD.
+        *Note: The stories in states Minnesota and Wyoming actually took place in South Dakota due to technical issues and numerous events happened in SD.
         `,
         image: [NY1, NY2, NY3, NY4]
     },
