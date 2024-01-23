@@ -23,6 +23,11 @@ import WA1 from "../_figures/WA1.jpg"
 import WA2 from "../_figures/WA2.jpg"
 import WA3 from "../_figures/WA3.jpg"
 
+import NY1 from "../_figures/NY1.jpg"
+import NY2 from "../_figures/NY2.jpg"
+import NY3 from "../_figures/NY3.jpg"
+import NY4 from "../_figures/NY4.jpg"
+
 const Journal = {
     "30": {
         title: `Today Will Be a Good Day`,
@@ -32,7 +37,7 @@ const Journal = {
         The sky stretched out brilliantly, a canvas of endless blue, and the landscape before us was a 
         breathtaking display of nature's splendor. The world seemed to have awakened to greet us with its beauty.
         Despite the picturesque surroundings, I couldn't shake the feeling of restlessness that had crept in. 
-        It was the 30th day of our trip, and my body had grown accustomed to the rigors of the ride, but my 
+        It was the 51th day of our trip, and my body had grown accustomed to the rigors of the ride, but my 
         spirit was at an all-time low. The once thrilling adventure had now become routine, and nothing about it 
         sparked my interest anymore. I found myself daydreaming about ways to cut the journey short and get to 
         the stayover ASAP. However, everything changed in a matter of minutes. I was engaged in casual conversation 
@@ -64,9 +69,14 @@ const Journal = {
         video: `https://drive.google.com/file/d/1PmoIYyFMmXZslzmDfX38NWtmAPE7wFAL/preview`
     },
     "36": {
-        title: "",
-        body: "",
-        image: [Demo1, Demo2, Demo3]
+        title: "Introduction",
+        body: `During my freshman year, I noticed 'Illini 4000 Cycle Across the US' on Quad Day. Having a background in Olympic triathlons and high school cycling, the idea of biking across the US intrigued me. The desire for a new bike and the prospect of saying I've 'cycled across the US' led me to sign up. The dream became reality as we flew from Chicago to New York, marking the start of an extraordinary journey. 
+
+        In the following you could view my story sequentially from New York to California, some states that are labeled with light red are some of my favorite stories. 
+        
+        *Note: The stories in states Minnesota and Wyoming actually took place in South Dakota due to technical issues and numerous events happened in SD.
+        `,
+        image: [NY1, NY2, NY3, NY4]
     },
     "34": {
         title: "",
