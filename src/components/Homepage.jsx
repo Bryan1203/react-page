@@ -1,5 +1,5 @@
 import { Button, Card, Col, Container, Image, ListGroup, Nav, Navbar, Row } from "react-bootstrap";
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link, HashRouter } from 'react-router-dom';
 import Life from './Life';
 import Home from './Home';
 import Blog from './Blog';
@@ -7,7 +7,7 @@ import Resume from '../assets/documents/Bryan_Chang_Resume.pdf'
 
 const Homepage = () => {
     return <Container style={{marginTop:'20px'}}>
-        <BrowserRouter basename='/react-page/'>
+        <HashRouter>
             <Navbar style={{marginTop: '-20px'}}>
                 <Container className="Nav-text">
                     <Nav className='me-auto'>
@@ -29,7 +29,7 @@ const Homepage = () => {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/" element={<Home />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </Container>
 }
 
