@@ -18,7 +18,7 @@ const Homepage = () => {
                     <a href={Resume} target="_blank">
                     <Button variant="success" style={{marginTop:'20px', marginBottom:'20px', marginLeft: '12px'}}>Download Resume</Button>
                     </a>
-                    <a href="mailto:bryanchang1234@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:bryan.chang@berkeley.edu" target="_blank" rel="noopener noreferrer">
                     <Button variant="success" style={{marginTop:'20px', marginBottom:'20px', marginLeft:'20px'}}>Email me</Button>
                     </a>
                 </Container>
