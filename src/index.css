@@ -75,6 +75,66 @@ body {
   flex-direction: column;
 }
 
+/* Projects Section */
+.projects-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 0;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Experience Section */
+.experience-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 0;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+.experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.experience-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Achievements Section */
+.achievements-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 0;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+.achievement-box {
+  transition: transform 0.3s ease;
+}
+
+.achievement-box:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 0;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
 image {
   pointer-events: none;
   transition: all 0.5s ease-out;
