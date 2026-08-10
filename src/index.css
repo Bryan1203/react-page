@@ -37,28 +37,13 @@ body {
 .projects-section,
 .experience-section,
 .contact-section {
-  border: 1px solid transparent;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-}
-
-.projects-section h1,
-.experience-section h1,
-.contact-section h1 {
-  position: relative;
-  padding-bottom: 14px;
-}
-
-.projects-section h1::after,
-.experience-section h1::after,
-.contact-section h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 72px;
-  height: 4px;
-  border-radius: 999px;
-  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.96);
+  border: 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 0;
+  padding: 76px 0;
 }
 
 .background {
@@ -104,15 +89,8 @@ body {
 
 /* Projects Section */
 .projects-section {
-  background: linear-gradient(135deg, rgba(239, 246, 255, 0.97), rgba(224, 242, 254, 0.97));
-  border-color: rgba(37, 99, 235, 0.22);
-  padding: 60px 0;
   margin-top: 100px;
-  border-radius: 20px;
-}
-
-.projects-section h1::after {
-  background: #2563eb;
+  border-radius: 24px 24px 0 0;
 }
 
 .project-card {
@@ -127,15 +105,7 @@ body {
 
 /* Experience Section */
 .experience-section {
-  background: linear-gradient(135deg, rgba(236, 253, 245, 0.97), rgba(204, 251, 241, 0.97));
-  border-color: rgba(13, 148, 136, 0.24);
-  padding: 60px 0;
-  margin-top: 50px;
-  border-radius: 20px;
-}
-
-.experience-section h1::after {
-  background: #0d9488;
+  background: rgba(248, 250, 252, 0.97);
 }
 
 .experience-card {
@@ -150,23 +120,23 @@ body {
 
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(135deg, rgba(255, 251, 235, 0.97), rgba(254, 243, 199, 0.97));
-  border-color: rgba(217, 119, 6, 0.24);
-  padding: 60px 0;
-  margin-top: 50px;
-  border-radius: 20px;
-}
-
-.contact-section h1::after {
-  background: #d97706;
+  border-radius: 0 0 24px 24px;
 }
 
 @media (max-width: 768px) {
   .projects-section,
   .experience-section,
   .contact-section {
-    padding: 40px 8px;
-    border-radius: 16px;
+    border-radius: 0;
+    padding: 52px 8px;
+  }
+
+  .projects-section {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .contact-section {
+    border-radius: 0 0 16px 16px;
   }
 }
 
