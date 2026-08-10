@@ -78,6 +78,18 @@ const Home = () => {
                 "2+ hour battery life in high-temperature conditions"
             ],
             video: "https://www.youtube.com/embed/oqk-9yflRnk"
+        },
+        {
+            title: "Bicycle-Mounted Pothole Detection System",
+            period: "Spring 2024",
+            description: "Developed a bicycle-mounted pothole detection system using computer vision. Directional speaker alerts warn the rider, while a Bluetooth-connected smart rear taillight warns cyclists behind and indicates whether a pothole is on the left or right side of the path.",
+            technologies: ["TensorFlow", "Computer Vision", "Raspberry Pi", "NPU Accelerator", "Bluetooth"],
+            achievements: [
+                "Trained and compared custom TensorFlow object-detection models",
+                "Quantized the selected model for efficient edge deployment",
+                "Deployed on a Raspberry Pi with NPU acceleration for real-time inference"
+            ],
+            video: "https://drive.google.com/file/d/1OG2bO6MxaCuThqqqf5fWJTVxbRnN86Z2/preview"
         }
     ];
 
