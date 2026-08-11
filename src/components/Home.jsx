@@ -242,39 +242,6 @@ const Home = () => {
                 </Container>
             </div>
 
-            {/* Key Achievements Section */}
-            <div className='achievements-section'>
-                <Container>
-                    <h1 className="taviraj-bold text-center mb-4" style={{fontSize: '3rem', marginTop: '80px'}}>Key Achievements</h1>
-                    <Row className="justify-content-center">
-                        <Col xs={12} md={6} lg={3} className="text-center mb-4">
-                            <div className="achievement-box p-4" style={{background: '#f8f9fa', borderRadius: '12px'}}>
-                                <h2 className="taviraj-bold text-primary">99.7%</h2>
-                                <p className="taviraj-medium">Labeling Time Reduction</p>
-                            </div>
-                        </Col>
-                        <Col xs={12} md={6} lg={3} className="text-center mb-4">
-                            <div className="achievement-box p-4" style={{background: '#f8f9fa', borderRadius: '12px'}}>
-                                <h2 className="taviraj-bold text-primary">43%</h2>
-                                <p className="taviraj-medium">Lane Detection Improvement</p>
-                            </div>
-                        </Col>
-                        <Col xs={12} md={6} lg={3} className="text-center mb-4">
-                            <div className="achievement-box p-4" style={{background: '#f8f9fa', borderRadius: '12px'}}>
-                                <h2 className="taviraj-bold text-primary">30cm</h2>
-                                <p className="taviraj-medium">Localization Accuracy</p>
-                            </div>
-                        </Col>
-                        <Col xs={12} md={6} lg={3} className="text-center mb-4">
-                            <div className="achievement-box p-4" style={{background: '#f8f9fa', borderRadius: '12px'}}>
-                                <h2 className="taviraj-bold text-primary">Sub-mm</h2>
-                                <p className="taviraj-medium">Robotic Precision</p>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-
             {/* Contact Section */}
             <div className='contact-section' style={{marginBottom: '100px'}}>
                 <Container>
