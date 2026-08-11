@@ -37,7 +37,10 @@ const Home = () => {
             description: "Developed ROS2-based localization system achieving 30cm accuracy vs RTK-GNSS ground truth using DLIO framework with IMU pre-integration, GICP scan matching, and GLIM mapping.",
             technologies: ["ROS2", "LiDAR", "IMU", "SLAM", "C++"],
             achievements: ["30cm localization accuracy", "RTK-GNSS ground truth validation"],
-            video: "https://www.youtube.com/embed/UhfdpPZDXnQ"
+            video: "https://www.youtube.com/embed/UhfdpPZDXnQ",
+            links: [
+                { label: "GitHub", url: "https://github.com/augcog/DLIO_plusplus/tree/ucb-roar" }
+            ]
         },
         {
             title: "LiDAR-Based Lane Navigation",
