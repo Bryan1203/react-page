@@ -58,11 +58,18 @@ const Home = () => {
             video: "https://www.youtube.com/embed/4Mbxl2Z15pg"
         },
         {
-            title: "UCB Advanced Robotics Project",
-            period: "2024-2025",
-            github: "https://github.com/Bryan1203/UCB_206A_fp_webpage",
-            description: "Advanced robotics research project at UC Berkeley focusing on motion planning and control systems.",
-            technologies: ["ROS", "Motion Planning", "Control Systems", "Python"]
+            title: "Firefighter Monitoring Network Project",
+            period: "Embedded Systems & IoT",
+            description: "Built a wearable health monitoring system that enables real-time tracking of firefighters' heart rate, motion, GPS location, and surrounding temperature during active duty. ESP32-based devices transmit critical health and environmental data through a mesh network to a central incident-command hub.",
+            technologies: ["ESP32", "Mesh Networking", "Wearable Sensors", "GPS", "GUI"],
+            achievements: [
+                "Wearable sensors integrated into firefighter gear",
+                "Central monitoring hub with an intuitive GUI",
+                "Real-time alerts for abnormal vital signs",
+                "300m+ urban mesh-network range",
+                "2+ hour battery life in high-temperature conditions"
+            ],
+            video: "https://www.youtube.com/embed/oqk-9yflRnk"
         }
     ];
 
