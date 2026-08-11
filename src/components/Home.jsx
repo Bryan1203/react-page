@@ -98,12 +98,14 @@ const Home = () => {
                 <div className='Home-text'>
                 <h1 className='taviraj-bold'>Bryan Chang</h1>
                     <p className='taviraj-medium' style={{fontSize: '1.1rem'}}>
-                        Master's student at <strong>UC Berkeley</strong> (MEng EECS, May 2026) specializing in <strong>Robotics and Embedded Software</strong>.
-                        Fung Fellowship recipient with expertise in autonomous driving, LiDAR processing, SLAM, and deep learning for computer vision.
+                        I’m a <strong>UC Berkeley MEng EECS graduate</strong> specializing in <strong>Robotics and Embedded Software</strong>,
+                        with a BS in Computer Engineering with Honors from <strong>UIUC</strong>. I build autonomous systems at the intersection
+                        of perception, localization, and motion planning, with hands-on experience in LiDAR, SLAM, ROS2, and deep learning.
                     </p>
                     <p className='taviraj-medium' style={{fontSize: '1rem', lineHeight: '2'}}>
-                        Previously at <strong>UIUC</strong> (BS Computer Engineering with Honors, 3.79 GPA).
-                        Passionate about advancing autonomous systems through cutting-edge perception, localization, and motion planning technologies.
+                        Beyond engineering, I’m drawn to ambitious challenges and new perspectives. In the summer of 2022, I <strong>bicycled
+                        across the United States from New York to California</strong> with Illini 4000—an experience that strengthened my resilience,
+                        curiosity, and appreciation for the people and places along the way.
                     </p>
                     <div className='mb-3'>
                         <Badge bg="primary" className='me-2 mb-2' style={{fontSize: '0.9rem'}}>Autonomous Driving</Badge>
@@ -114,7 +116,8 @@ const Home = () => {
                     </div>
                     <div>
                         <Button className='taviraj-bold' variant="outline-dark" style={{marginRight:'20px', marginTop:'10px'}} onClick={scrollToSecondComponent}>View My Projects</Button>
-                        <Button className='taviraj-bold' variant="outline-dark" style={{marginTop:'10px'}} onClick={scrollToExperience}>Experience</Button>
+                        <Button className='taviraj-bold' variant="outline-dark" style={{marginRight:'20px', marginTop:'10px'}} onClick={scrollToExperience}>Experience</Button>
+                        <Button as={Link} to="/life" className='taviraj-bold' variant="outline-dark" style={{marginTop:'10px'}}>Explore My Bike Trip</Button>
                     </div>
 
                 </div>
