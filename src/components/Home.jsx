@@ -55,14 +55,19 @@ const Home = () => {
             description: "Programmed Techman TM12 robot arm for automated glass slide handling with sub-millimeter precision using MoveIt framework in ROS2.",
             technologies: ["ROS2", "MoveIt", "Robot Manipulation", "Python"],
             achievements: ["Sub-millimeter precision", "Production deployment"],
-            video: "https://www.youtube.com/embed/4Mbxl2Z15pg"
+            video: "https://www.youtube.com/embed/4Mbxl2Z15pg",
+            links: [
+                { label: "Project Website", url: "https://bryan1203.github.io/UCB_206A_fp_webpage/" },
+                { label: "GitHub", url: "https://github.com/YuKai0928/25F_206A_FinalProject" }
+            ]
         },
         {
             title: "Firefighter Monitoring Network Project",
-            period: "Embedded Systems & IoT",
+            period: "Fall 2024",
             description: "Built a wearable health monitoring system that enables real-time tracking of firefighters' heart rate, motion, GPS location, and surrounding temperature during active duty. ESP32-based devices transmit critical health and environmental data through a mesh network to a central incident-command hub.",
             technologies: ["ESP32", "Mesh Networking", "Wearable Sensors", "GPS", "GUI"],
             achievements: [
+                "Honorable Mention in the ECE 445 Hall of Fame",
                 "Wearable sensors integrated into firefighter gear",
                 "Central monitoring hub with an intuitive GUI",
                 "Real-time alerts for abnormal vital signs",
@@ -198,6 +203,17 @@ const Home = () => {
                                                     View on GitHub →
                                                 </Button>
                                             </a>
+                                        )}
+                                        {project.links && (
+                                            <div className="d-flex flex-wrap gap-2">
+                                                {project.links.map((link) => (
+                                                    <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">
+                                                        <Button variant="outline-primary" size="sm" className="taviraj-bold">
+                                                            {link.label} →
+                                                        </Button>
+                                                    </a>
+                                                ))}
+                                            </div>
                                         )}
                                     </Card.Body>
                                 </Card>
