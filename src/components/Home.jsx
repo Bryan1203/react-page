@@ -36,7 +36,8 @@ const Home = () => {
             organization: "AI Racing Tech - Project Lead",
             description: "Developed ROS2-based localization system achieving 30cm accuracy vs RTK-GNSS ground truth using DLIO framework with IMU pre-integration, GICP scan matching, and GLIM mapping.",
             technologies: ["ROS2", "LiDAR", "IMU", "SLAM", "C++"],
-            achievements: ["30cm localization accuracy", "RTK-GNSS ground truth validation"]
+            achievements: ["30cm localization accuracy", "RTK-GNSS ground truth validation"],
+            video: "https://www.youtube.com/embed/UhfdpPZDXnQ"
         },
         {
             title: "LiDAR-Based Lane Navigation",
@@ -44,7 +45,8 @@ const Home = () => {
             github: "https://github.com/Bryan1203/LiDAR-Based-Lane-Navigation",
             description: "Implemented end-to-end autonomous navigation system using Point Transformer V3 for lane detection, KISS-ICP SLAM with temporal fusion, and Pure Pursuit + adaptive PID control. Deployed on Polaris GEM e2/e4 autonomous vehicles.",
             technologies: ["PyTorch", "Point Cloud", "SLAM", "ROS2", "Computer Vision"],
-            achievements: ["300-400ms real-time performance", "Deployed on autonomous vehicles"]
+            achievements: ["300-400ms real-time performance", "Deployed on autonomous vehicles"],
+            video: "https://www.youtube.com/embed/cCTi2zFftlY"
         },
         {
             title: "Robotic Pick-and-Place Automation",
@@ -52,7 +54,8 @@ const Home = () => {
             organization: "Ember Robotics",
             description: "Programmed Techman TM12 robot arm for automated glass slide handling with sub-millimeter precision using MoveIt framework in ROS2.",
             technologies: ["ROS2", "MoveIt", "Robot Manipulation", "Python"],
-            achievements: ["Sub-millimeter precision", "Production deployment"]
+            achievements: ["Sub-millimeter precision", "Production deployment"],
+            video: "https://www.youtube.com/embed/4Mbxl2Z15pg"
         },
         {
             title: "UCB Advanced Robotics Project",
@@ -145,7 +148,19 @@ const Home = () => {
                     <Row>
                         {projects.map((project, idx) => (
                             <Col xs={12} md={6} key={idx} className="mb-4">
-                                <Card className="project-card h-100" style={{border: '2px solid #dee2e6', borderRadius: '12px'}}>
+                                <Card className="project-card h-100" style={{border: '2px solid #dee2e6', borderRadius: '12px', overflow: 'hidden'}}>
+                                    {project.video && (
+                                        <div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
+                                            <iframe
+                                                style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                                                src={project.video}
+                                                title={`${project.title} video`}
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen
+                                            />
+                                        </div>
+                                    )}
                                     <Card.Body>
                                         <div className="d-flex justify-content-between align-items-start mb-2">
                                             <Card.Title className="taviraj-bold" style={{fontSize: '1.5rem'}}>{project.title}</Card.Title>
